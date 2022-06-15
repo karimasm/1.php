@@ -34,40 +34,38 @@
 
 		// Contoh Insert
 
-			$queryMasukkanCustomer = "INSERT INTO customer (nama, email, alamat) 
+			$queryMasukkanLatihan = "INSERT INTO latihan (nama, email, alamat) 
 			VALUES ('karima', 'karima@mail.com', 'Jalan pelita dalam, jakarta')";
-		    $stmt = $conn->prepare($queryMasukkanCustomer); 
+		    $stmt = $conn->prepare($queryMasukkanLatihan); 
 		    $stmt->execute();
 		    
 		    echo "Data berhasil dimasukkan";
 
 
-		// Contoh read atau select
+		// // Contoh read atau select
 
-		$queryAmbilCustomer = "SELECT * FROM customer";
-		$stmt = $conn->prepare($queryAmbilCustomer); 
+		$queryAmbilLatihan = "SELECT * FROM latihan";
+		$stmt = $conn->prepare($queryAmbilLatihan); 
 		$stmt->execute();
 		
-		foreach($stmt->fetchAll() as $customer) { 
-	        echo $customer["nama"]. " | ". $customer["email"]. " | ". $customer["alamat"]. "<br>";
+		foreach($stmt->fetchAll() as $latihan) { 
+	        echo $latihan["nama"]. " | ". $latihan["email"]. " | ". $latihan["alamat"]. "<br>";
 	    }
 		
-		// Contoh update
+		// // Contoh update
 
-	    $queryEditCustomer = "update customer set nama='ini', email='inikarima@mail.id' WHERE id=1";
-		$stmt = $conn->prepare($queryEditCustomer); 
+	    $queryEditLatihan = "update latihan set nama='ini', email='inikarima@mail.id' WHERE id=1";
+		$stmt = $conn->prepare($queryEditLatihan); 
 		$stmt->execute();
 		echo "Update berhasil";
 
 
-		// Contoh delete
+		// // Contoh delete
 
-		$queryHapusCustomer = "delete from customer WHERE id='2'";
-		$stmt = $conn->prepare($queryHapusCustomer); 
+		$queryHapusLatihan = "delete from latihan WHERE id='2'";
+		$stmt = $conn->prepare($queryHapusLatihan); 
 		$stmt->execute();
 		echo "delete berhasil";
-
-		
 
 	
 		// jika sudah selesai melakukan koneksi ke database, tutup koneksi dengan membuat menjadi null
